@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     end
   end
 
-    # resources :todos, except: [:index, :show, :update, :create, :destroy] do
-    #   resources :notes 
-    # end
+    resources :services, except: [:index, :show, :update, :create, :destroy] do
+      resources :comments 
+    end
 end
