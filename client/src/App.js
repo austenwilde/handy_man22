@@ -4,6 +4,8 @@ import About from './components/shared/About';
 import Nomatch from './components/shared/Home';
 import MainNavbar from './components/shared/MainNavbar';
 import Workers from './components/workers/Workers';
+import Services from './components/services/Services';
+import Comments from './components/comments/Comments';
 
 const App = () => (
   <>
@@ -13,6 +15,8 @@ const App = () => (
       <Route path='/about' element={<About />} />
       <Route path='*' element={<Nomatch />} />
       <Route path='/workers' element={<Workers />} />
+      <Route path='/workers/:workerId/services' element={<Services />} />
+      <Route path='/services/:serviceId/comments' element={<Comments />} />
     </Routes>
   </>
 

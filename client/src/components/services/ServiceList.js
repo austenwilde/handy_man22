@@ -2,7 +2,7 @@ import Service from './Service';
 
 const ServiceList = ({ services, updateService, deleteService }) => (
   <>
-    { services.map( l => 
+    { services.map( s => 
       <Service
         key={s.id}
         {...s}

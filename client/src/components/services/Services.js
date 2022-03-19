@@ -1,39 +1,41 @@
+import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import ServiceList from './ServiceList';
 import ServiceForm from './ServiceForm';
 
 const Services = () => {
+  const { workerId } = useParams()
   const [services, setServices] = useState([])
 
   useEffect( () => {
-    axios.get('/api/services')
+    axios.get(`/api/workers/${workerId}/services`)
       .then( res => setServices(res.data) )
       .catch( err => console.log(err) )
   }, [])
 
   const addService = (service) => {
-    axios.post('/api/services', { service })
+    axios.post(`/api/workers/${workerId}/services`, { service })
       .then( res => setServices([ ...services, res.data ]))
       .catch( err => console.log(err) )
   }
 
   const updateService = (id, service) => {
-    axios.put(`/api/services/${id}`, { service })
+    axios.put(`/api/workers/${workerId}/services${id}`, { service })
       .then( res => {
-        const newUpdatedServices = services.map( s => {
+        const newUpdateServices = services.map( s => {
           if (s.id === id) {
             return res.data
           }
           return s
         })
-        setServices(newUpdatedServices)
+        setServices(newUpdateServices)
       })
       .catch( err => console.log(err) )
   }
 
   const deleteService = (id) => {
-    axios.delete(`/api/services/${id}`)
+    axios.delete(`/api/workers/${ workerId }/services/${id}`)
       .then( res => setServices( services.filter( s => s.id !== id ) ) )
       .catch( err => console.log(err) )
   }

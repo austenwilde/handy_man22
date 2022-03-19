@@ -34,7 +34,7 @@ const CommentForm = ({ addComment, id, subject, body, user, updateComment, setEd
         <textarea
           name='body'
           value={comment.body}
-          onChange={(e) => setNote({ ...comment, body: e.target.value })}
+          onChange={(e) => setComment({ ...comment, body: e.target.value })}
           required
           placeholder='Body'
         ></textarea>

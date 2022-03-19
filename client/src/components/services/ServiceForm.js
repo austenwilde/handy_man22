@@ -1,23 +1,23 @@
 import { useState, useEffect } from 'react';
 
-const ListForm = ({ addList, id, name, servicetype, location, updateList, setEdit }) => {
-  const [list, setList] = useState({ name: '', servicetype: '', })
+const ServiceForm = ({ addService, id, name, servicetype, location, updateService, setEdit }) => {
+  const [service, setService] = useState({ name: '', servicetype: '', location: ''})
 
   useEffect( () => {
     if (id) {
-      setList({ name, servicetype, location})
+      setService({ name, servicetype, location })
     }
   }, [])
 
   const handleSubmit = (e) => {
     e.preventDefault()
     if (id) {
-      updateList(id, service)
+      updateService(id, service)
       setEdit(false)
     } else {
-      addList(service)
+      addService(service)
     }
-    setList({ name: '', servicetype: '' })
+    setService({ name: '', servicetype: '', location: '' })
   }
 
   return(
@@ -31,12 +31,19 @@ const ListForm = ({ addList, id, name, servicetype, location, updateList, setEdi
           required
           placeholder='Service'
         />
-        <textarea
+        <input 
           name='servicetype'
-          value={list.servicetype} 
+          value={service.servicetype}
           onChange={(e) => setService({ ...service, servicetype: e.target.value })}
           required
-          placeholder='servicetype'
+          placeholder='Service Type'
+        />
+        <textarea
+          name='location'
+          value={service.location} 
+          onChange={(e) => setService({ ...service, location: e.target.value })}
+          required
+          placeholder='location'
         ></textarea>
         <button type='submit'>{ id ? "Update" : "Submit"}</button>
       </form>
