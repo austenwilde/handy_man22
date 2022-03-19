@@ -3,9 +3,10 @@ Rails.application.routes.draw do
     resources :workers do
       resources :services
     end
-  end
+  
 
     resources :services, except: [:index, :show, :update, :create, :destroy] do
       resources :comments 
     end
+  end
 end

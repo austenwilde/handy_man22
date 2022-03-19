@@ -21,7 +21,7 @@ const Services = () => {
   }
 
   const updateService = (id, service) => {
-    axios.put(`/api/workers/${workerId}/services${id}`, { service })
+    axios.put(`/api/workers/${workerId}/services/${id}`, { service })
       .then( res => {
         const newUpdateServices = services.map( s => {
           if (s.id === id) {
