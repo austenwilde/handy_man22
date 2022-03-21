@@ -10,6 +10,7 @@ import Comments from './components/comments/Comments';
 const App = () => (
   <>
     <MainNavbar />
+    
     <Routes>
       <Route path='/' element={<Home />} />
       <Route path='/about' element={<About />} />
