@@ -12,7 +12,7 @@ const CommentForm = ({ addComment, id, subject, body, user, updateComment, setEd
   const handleSubmit = (e) => {
     e.preventDefault()
     if (id) {
-      updateComment(id, Comment)
+      updateComment(id, comment)
       setEdit(false)
     } else {
       addComment(comment)
@@ -24,6 +24,13 @@ const CommentForm = ({ addComment, id, subject, body, user, updateComment, setEd
     <>
       <h1>{ id ? "Update" : "Create" } Comment</h1>
       <form onSubmit={handleSubmit}>
+      <input
+          name='user'
+          value={comment.user}
+          onChange={(e) => setComment({ ...comment, user: e.target.value })}
+          required
+          placeholder='Username'
+        />
         <input
           name='subject'
           value={comment.subject}
