@@ -1,8 +1,15 @@
+import { MainHeader } from "../styles/shared";
+import { MainTitle } from "../styles/shared";
 
 const Home = () => (
   <>
-  <h1> Welcome Handymen </h1>
+  <MainTitle>
+  <MainHeader>Welcome<br />To  <br /> HandyMan! </MainHeader>
+  </MainTitle>
   </>
 )
 
 export default Home;
+
+
+

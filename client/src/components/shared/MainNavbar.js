@@ -1,30 +1,40 @@
-import { Link } from 'react-router-dom';
 
-const Navbar = () => (
-  <nav>
-    <ul>
-      <Link to='/'>
-        <li>
-          ServiceList
-        </li>
-      </Link>
-      <Link to='/'>
-        <li>
-          Home
-        </li>
-      </Link>
-      <Link to='/about'>
-        <li>
-          About
-        </li>
-      </Link>
-      <Link to='/workers'>
-        <li>
-          Workers
-        </li>
-      </Link>
-    </ul>
-  </nav>
-)
-
-export default Navbar;
+         import { Link } from 'react-router-dom';
+         import { Navbar, Container, Nav } from 'react-bootstrap';
+         import { NavItems } from '../styles/shared';
+         import { HandyMen } from '../styles/shared';
+         import { NavigationItems } from '../styles/shared';
+         
+         const MainNavbar = () => (
+           <>
+              <Navbar>
+               <Container>
+               <Link to='/'>
+                 <HandyMen>HandyMan</HandyMen>
+               </Link>
+                 <Nav>
+                   <NavigationItems>
+                     <Link to='/'>
+                       <NavItems>Home</NavItems>
+                     </Link>
+                   </NavigationItems>
+                   <NavigationItems>
+                     <Link to='/about'>
+                     <NavItems>Team</NavItems>
+                     </Link>
+                   </NavigationItems>
+                   <NavigationItems>
+                     <Link to='/Worker'>
+                     <NavItems>Worker</NavItems>
+                     </Link>
+                   </NavigationItems>
+                 </Nav>
+              
+               </Container>
+             </Navbar>
+            
+           </>
+   
+         )
+         
+         export default MainNavbar;
