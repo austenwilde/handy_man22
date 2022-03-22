@@ -24,7 +24,7 @@
                      </Link>
                    </NavigationItems>
                    <NavigationItems>
-                     <Link to='/Worker'>
+                     <Link to='/workers'>
                      <NavItems>Worker</NavItems>
                      </Link>
                    </NavigationItems>
