@@ -4,6 +4,7 @@
          import { NavItems } from '../styles/shared';
          import { HandyMen } from '../styles/shared';
          import { NavigationItems } from '../styles/shared';
+
          
          const MainNavbar = () => (
            <>
@@ -24,7 +25,7 @@
                      </Link>
                    </NavigationItems>
                    <NavigationItems>
-                     <Link to='/Worker'>
+                     <Link to='/Workers'>
                      <NavItems>Worker</NavItems>
                      </Link>
                    </NavigationItems>
