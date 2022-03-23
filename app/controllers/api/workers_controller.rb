@@ -33,7 +33,6 @@ class Api::WorkersController < ApplicationController
 
   private 
     def set_worker
-    
       @worker = Worker.find(params[:id])
     end
 
