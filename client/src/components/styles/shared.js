@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Col } from 'react-bootstrap';
+
 
 export const NavItems = styled.h1`
 
@@ -23,7 +23,8 @@ ont-family: "Gill Sans", sans-serif;
 font-weight: 400;
 font-size: 16px;
 display: inline-block;
-padding-top: 15px
+
+
 `
 
 
@@ -31,10 +32,11 @@ padding-top: 15px
 export const MainHeader = styled.h1`
 text-align: center;
 height: 60vh;
-font-size: 40px;
+font-size: 50px;
 background-color: #EEEEEE;
 font-family: "Gill Sans", sans-serif;
 font-weight: 200;
+padding-top: 45px;
 
 
 `
@@ -56,6 +58,29 @@ export const NavigationItems = styled.h1`
 text-indent: 10px
 
 `
+export const img= styled.img`
+
+width: 30px,
+`
+ export const Info = styled.h6`
+ color: black;
+ont-family: "Gill Sans", sans-serif;
+font-weight: 400;
+font-size: 16px;
+display: inline-block;
+ `
+
+ 
+
+
+
+
+
+
+
+
+
+
 
 
 
