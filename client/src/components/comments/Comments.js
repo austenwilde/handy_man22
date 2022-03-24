@@ -53,7 +53,7 @@ const Comments = () => {
           addComment={addComment}
           setAdd={setAdd}
         />
-      <Button onClick={() => setAdd(false)}>Cancel</Button>
+      <Button variant="warning" onClick={() => setAdd(false)}>Cancel</Button>
        </>
     :
       <Button onClick={() => setAdd(true)}>+</Button>
