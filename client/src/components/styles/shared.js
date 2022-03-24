@@ -23,7 +23,7 @@ ont-family: "Gill Sans", sans-serif;
 font-weight: 400;
 font-size: 16px;
 display: inline-block;
-padding-top: 15px
+
 `
 
 
@@ -62,6 +62,37 @@ export const NavigationItems = styled.h1`
 text-indent: 10px
 
 `
+export const img= styled.img`
+
+width: 30px,
+`
+ export const Info = styled.h6`
+ color: black;
+ont-family: "Gill Sans", sans-serif;
+font-weight: 400;
+font-size: 16px;
+display: inline-block;
+ `
+
+ 
+
+
+
+// export const Footer = styled.h5`
+
+// text-align: center;
+// font-weight: 400;
+// font-size: 16px;
+// margin-top: 20px;
+// margin-bottom: 20px;
+// `
+
+
+
+
+
+
+
 
 
 

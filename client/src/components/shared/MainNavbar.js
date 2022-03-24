@@ -1,10 +1,8 @@
-
-         import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
          import { Navbar, Container, Nav } from 'react-bootstrap';
          import { NavItems } from '../styles/shared';
          import { HandyMen } from '../styles/shared';
          import { NavigationItems } from '../styles/shared';
-         
          const MainNavbar = () => (
            <>
               <Navbar>
@@ -29,12 +27,8 @@
                      </Link>
                    </NavigationItems>
                  </Nav>
-              
                </Container>
              </Navbar>
-            
            </>
-   
          )
-         
          export default MainNavbar;
