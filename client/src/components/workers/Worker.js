@@ -24,6 +24,8 @@ const Worker = ({ id, title, specialty, review, updateWorker, deleteWorker }) =>
         :
         <>
           <Row xs={3} md={3} className="g-3">
+            {Array.from({ length: 6}).map((_)  => ( 
+          <Col key={id}>
             {Array.from({ length: 6}).map((_) => (
           <Col>
                   <Card style={{ width: '20rem' }}>
