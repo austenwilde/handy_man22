@@ -2,10 +2,10 @@ import Worker from './Worker';
 
 const WorkerList = ({ workers, updateWorker, deleteWorker }) => (
   <>
-    { workers.map( l => 
+    { workers.map( w => 
       <Worker
-        key={l.id}
-        {...l}
+        key={w.id}
+        {...w}
         updateWorker={updateWorker}
         deleteWorker={deleteWorker}
       />

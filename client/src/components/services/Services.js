@@ -6,7 +6,7 @@ import ServiceForm from './ServiceForm';
 
 const Services = () => {
   const { workerId } = useParams()
-  const [services, setServices] = useState([])
+  const [services, setServices] = useState([]);
 
   useEffect( () => {
     axios.get(`/api/workers/${workerId}/services`)
