@@ -8,11 +8,13 @@ import Workers from './components/workers/Workers';
 import Services from './components/services/Services';
 import Comments from './components/comments/Comments';
 
+
 const App = () => (
   <>
     <MainNavbar />
     
     <Routes>
+
       <Route path='/' element={<Home />} />
       <Route path='/about' element={<About />} />
       <Route path='*' element={<Nomatch />} />
