@@ -2,6 +2,7 @@ import { useState } from 'react';
 import WorkerForm from './WorkerForm';
 import { Link } from 'react-router-dom';
 import { Button, Card, Col, Row} from 'react-bootstrap'
+
 const Worker = ({ id, title, specialty, review, updateWorker, deleteWorker }) => {
   const [editing, setEdit] = useState(false)
   return(
@@ -16,6 +17,10 @@ const Worker = ({ id, title, specialty, review, updateWorker, deleteWorker }) =>
             review={review}
             updateWorker={updateWorker}
             setEdit={setEdit}
+            // deleteWorker={deleteWorker}
+            
+           
+           
          />
          <Button variant="warning" onClick={() => setEdit(false)}>
             Cancel
@@ -55,23 +60,6 @@ const Worker = ({ id, title, specialty, review, updateWorker, deleteWorker }) =>
 }
 
 
-//   <Card style={{ width: '10rem' }}>
-//      <Card.Body>
-//        <Card.Title>{title}</Card.Title>
-//         <Card.Subtitle className="mb-2 text-muted">{specialty}</Card.Subtitle>
-//         <Card.Text>
-//           {review}
-//           <Button variant="warning" onClick={() => setEdit(true)}>
-//             Edit
-//           </Button>
-//           <Button variant="danger" onClick={() => deleteWorker(id)}>
-//             Delete
-//           </Button>
-//         </Card.Text>
-//     <Link to={`/workers/id/services`}>
-//       <Card.Link>Services</Card.Link>
-//     </Link>
-//   </Card.Body>
-// </Card>
+//   
 
 export default Worker;

@@ -33,7 +33,7 @@ export const MainHeader = styled.h1`
 text-align: center;
 height: 60vh;
 font-size: 50px;
-background-color: #EEEEEE;
+background-color: white;
 font-family: "Gill Sans", sans-serif;
 font-weight: 200;
 padding-top: 45px;
@@ -48,7 +48,7 @@ font-style: italic;
 `
 export const MainTitle = styled.h1`
 
-background-color: #EEEEEE;;
+background-color: white;;
 padding-top: 130px;
 
 `
@@ -68,15 +68,33 @@ ont-family: "Gill Sans", sans-serif;
 font-weight: 400;
 font-size: 16px;
 display: inline-block;
+ background-color: white;
+ width: 70rem;
+ margin-right: auto;
  `
 
  
 
 
+export const P = styled.h1`
+
+color: black;
+ont-family: "Gill Sans", sans-serif;
+font-weight: 300;
+font-size: 12px;
+text-align: center;
+margin-top: 30px
+
+`
+
+
+export const C = styled.div`
+background-color: #EEEEEE;
 
 
 
 
+`
 
 
 
