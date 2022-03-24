@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Col } from 'react-bootstrap';
+
 
 export const NavItems = styled.h1`
 
@@ -13,7 +13,7 @@ display: inline-block;
 `
 export const MyFormContainer = styled.div`
   border: 1px solid black;
-  width: 750px;
+  width: 600px;
   padding: 60px;
   margin: 60px;
 `
@@ -35,6 +35,12 @@ font-size: 40px;
 background-color: #EEEEEE;
 font-family: "Gill Sans", sans-serif;
 font-weight: 200;
+
+
+`
+
+export const CommentUnderline = styled.h1`
+border-bottom: 1px solid #aaa
 
 
 `

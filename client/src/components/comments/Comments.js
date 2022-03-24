@@ -3,10 +3,14 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import CommentList from './CommentList';
 import CommentForm from './CommentForm';
+import { Button } from 'react-bootstrap';
 
 const Comments = () => {
-  const [comments, setComments] = useState([])
   const { serviceId } = useParams();
+  const [comments, setComments] = useState([])
+  const [adding, setAdd] = useState(false);
+  
+  
 
   useEffect( () => {
     axios.get(`/api/services/${serviceId}/comments`)
@@ -42,8 +46,19 @@ const Comments = () => {
 
   return (
     <>
-      <CommentForm addComment={addComment} />
-      <h1>Comment # {serviceId} </h1>
+    {
+      adding ? 
+      <>
+        <CommentForm 
+          addComment={addComment}
+          setAdd={setAdd}
+        />
+      <Button onClick={() => setAdd(false)}>Cancel</Button>
+       </>
+    :
+      <Button onClick={() => setAdd(true)}>+</Button>
+     }
+      <h1>Comments</h1>
       <CommentList 
         comments={comments}
         updateComment={updateComment}

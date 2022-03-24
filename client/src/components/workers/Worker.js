@@ -24,7 +24,7 @@ const Worker = ({ id, title, specialty, review, updateWorker, deleteWorker }) =>
         :
         <>
           <Row xs={3} md={3} className="g-3">
-            {Array.from({ length: 6}).map((_, id) => (
+            {Array.from({ length: 6}).map((_)  => ( 
           <Col key={id}>
                   <Card style={{ width: '20rem' }}>
                   <Card.Img variant="top" src="https://images.pexels.com/photos/1097456/pexels-photo-1097456.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="img" />
