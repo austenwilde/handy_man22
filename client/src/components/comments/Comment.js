@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import CommentForm from './CommentForm';
-
+import { Stack, Form, Button } from 'react-bootstrap'
+import { CommentUnderline } from '../styles/shared';
 const Comment = ({ id, subject, body, user, updateComment, deleteComment }) => {
   const [editing, setEdit] = useState(false)
   
@@ -17,26 +18,34 @@ const Comment = ({ id, subject, body, user, updateComment, deleteComment }) => {
             updateComment={updateComment}
             setEdit={setEdit}
           />
-          <button
+          <Button variant="warning"
             onClick={() => setEdit(false)}
           >
             Cancel
-          </button>
+          </Button>
         </>
         :
         <>
-          <h1>{id} {subject}</h1>
-          <p>{body}</p>
-          <button
+        <Form>
+          <CommentUnderline>
+        <Stack direction="horizontal" gap={5}>
+          <div><h3>{user}</h3></div>
+          <div><h4>{subject}</h4></div>
+          <div><h6>{body}</h6></div>
+          <Button variant="warning"
             onClick={() => setEdit(true)}
           >
             Edit
-          </button>
-          <button
+          </Button>
+          <Button variant="danger"
             onClick={() => deleteComment(id)}
           >
             Delete
-          </button>
+          </Button>
+
+          </Stack>
+          </CommentUnderline>
+          </Form>
         </>
       }  
     </>

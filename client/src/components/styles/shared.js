@@ -13,7 +13,7 @@ display: inline-block;
 `
 export const MyFormContainer = styled.div`
   border: 1px solid black;
-  width: 750px;
+  width: 600px;
   padding: 60px;
   margin: 60px;
 `
@@ -23,7 +23,6 @@ ont-family: "Gill Sans", sans-serif;
 font-weight: 400;
 font-size: 16px;
 display: inline-block;
-
 
 `
 
@@ -37,6 +36,12 @@ background-color: white;
 font-family: "Gill Sans", sans-serif;
 font-weight: 200;
 padding-top: 45px;
+
+
+`
+
+export const CommentUnderline = styled.h1`
+border-bottom: 1px solid #aaa
 
 
 `
@@ -68,9 +73,11 @@ ont-family: "Gill Sans", sans-serif;
 font-weight: 400;
 font-size: 16px;
 display: inline-block;
+
  background-color: white;
  width: 70rem;
  margin-right: auto;
+
  `
 
  
@@ -92,9 +99,19 @@ export const C = styled.div`
 background-color: #EEEEEE;
 
 
+// export const Footer = styled.h5`
+
+// text-align: center;
+// font-weight: 400;
+// font-size: 16px;
+// margin-top: 20px;
+// margin-bottom: 20px;
+// `
 
 
-`
+
+
+
 
 
 

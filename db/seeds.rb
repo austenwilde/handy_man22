@@ -15,12 +15,17 @@ Worker.delete_all
       location: Faker::Address.city,
       worker_id: worker.id
     )
+    5.times do
     Comment.create(
       subject: Faker::Job.field,
       body: Faker::Lorem.paragraph,
       user: Faker::Name.name,
       service_id: service.id
     )
+
+
+    end
+  
   end 
 end
 
