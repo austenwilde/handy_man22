@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import ServiceList from './ServiceList';
 import ServiceForm from './ServiceForm';
+import { Button } from 'react-bootstrap';
 
 const Services = () => {
   const { workerId } = useParams()
@@ -42,13 +43,24 @@ const Services = () => {
 
   return (
     <>
-      <ServiceForm addService={addService}/>
+      {
+        services ?
+          <>
+            <ServiceForm 
+              addService={addService}
+              setServices={setServices} 
+            />
+          <Button onClick={() => setServices(false)}>Cancel</Button>
+          </>
+        :
+        <Button onClick={() => setServices(true)}>+</Button>
+        }
       <h1>All Services</h1>
-      <ServiceList 
+      <ServiceList
         services={services}
         updateService={updateService}
         deleteService={deleteService}
-      />
+      /> 
     </>
   )
 }

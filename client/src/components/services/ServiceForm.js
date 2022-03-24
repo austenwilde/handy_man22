@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { Form, Button } from 'react-bootstrap'
+import { MyFormContainer } from '../styles/shared';
 
 const ServiceForm = ({ addService, id, name, servicetype, location, updateService, setEdit }) => {
   const [service, setService] = useState({ name: '', servicetype: '', location: ''})
@@ -21,33 +23,43 @@ const ServiceForm = ({ addService, id, name, servicetype, location, updateServic
   }
 
   return(
-    <>
-      <h4>{ id ? "Edit" : "Create" } Service</h4>
-      <form onSubmit={handleSubmit}>
-        <input 
-          name='name'
-          value={service.name}
-          onChange={(e) => setService({ ...service, name: e.target.value })}
-          required
-          placeholder='Service'
+    <MyFormContainer>
+    <h4>{ id ? "Edit" : "Create" } Service</h4>
+    <Form onSubmit={handleSubmit}>
+    <Form.Group className="mb-3">
+    <Form.Label>Name</Form.Label>
+        <Form.Control 
+        name='name'
+        value={service.name}
+        onChange={(e) => setService({ ...service, name: e.target.value })}
+        required
+        placeholder='Service'
+      />
+      </Form.Group>
+      <Form.Group className="mb-3">
+        <Form.Label>Service type</Form.Label>
+        <Form.Control 
+        name='servicetype'
+        value={service.servicetype}
+        onChange={(e) => setService({ ...service, servicetype: e.target.value })}
+        required
+        placeholder='Service Type'
         />
-        <input 
-          name='servicetype'
-          value={service.servicetype}
-          onChange={(e) => setService({ ...service, servicetype: e.target.value })}
-          required
-          placeholder='Service Type'
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+        <Form.Label>Location</Form.Label>
+        <Form.Control 
+        as="textarea" 
+        rows={3} 
+        name='location'
+        value={service.location}
+        onChange={(e) => setService({ ...service, location: e.target.value})}
+        placeholder='Location'
         />
-        <textarea
-          name='location'
-          value={service.location} 
-          onChange={(e) => setService({ ...service, location: e.target.value })}
-          required
-          placeholder='location'
-        ></textarea>
-        <button type='submit'>{ id ? "Update" : "Submit"}</button>
-      </form>
-    </>
+      </Form.Group>
+      <Button type='submit'>{ id ? "Update" : "Submit"}</Button>
+    </Form>
+  </MyFormContainer>
   )
 }
 

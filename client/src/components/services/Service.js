@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ServiceForm from './ServiceForm';
 import { Link } from 'react-router-dom';
+import { Button, Card, Col, Row} from 'react-bootstrap'
 
 const Service = ({ name, id, servicetype, location, updateService, deleteService }) => {
   const [editing, setEdit] = useState(false)
@@ -22,34 +23,35 @@ const Service = ({ name, id, servicetype, location, updateService, deleteService
             updateService={updateService}
             setEdit={setEdit}
          />
-         <button onClick={() => setEdit(false)}
+         <Button onClick={() => setEdit(false)}
          >
             Cancel
-          </button>
+          </Button>
         </>
         :
         <>
-          <h5>{name}</h5>
-          <p>{servicetype}</p>
-          <p>{location}</p>
-          <button 
-            onClick={() => setEdit(true)}
-          >
-            Edit
-          </button>
-          <button 
-            onClick={() => deleteService(id)}
-          >
-            Delete
-          </button>
-          <Link 
-            to={`/services/${id}/comments`}
-            state={{ serviceId: id, serviceName: name }}
-          >
-          <button>
-            Comments
-          </button>
-          </Link>
+         <Row xs={3} md={3} className="g-3">
+            {Array.from({ length: 6}).map((_) => (
+          <Col>
+                  <Card style={{ width: '18rem' }}>
+              <Card.Body>
+                <Card.Title>{name}</Card.Title>
+                  <Card.Subtitle className="mb-2 text-muted">{servicetype}</Card.Subtitle>
+                  <Button variant="warning" onClick={() => setEdit(true)}>
+                      Show
+                    </Button>
+                    <Button variant="danger" onClick={() => deleteService(id)}>
+                      Delete
+                    </Button>
+                <Link to={`/services/${id}/comments`}>
+                Comments
+                </Link>
+            </Card.Body>
+          </Card>
+          </Col>
+          ))}
+          </Row>
+          
         </>
       }
     </>
