@@ -8,11 +8,12 @@ class Api::WorkersController < ApplicationController
   def show
     render json: @worker
   end
+  
 
   def create
     @worker = Worker.new(worker_params)
     if @worker.save 
-      render json: @worker 
+      render json: @worker
     else
       render json: { errors: @worker.errors }, status: :unprocessable_entity
     end
@@ -32,6 +33,7 @@ class Api::WorkersController < ApplicationController
   end
 
   private 
+ 
     def set_worker
       @worker = Worker.find(params[:id])
     end

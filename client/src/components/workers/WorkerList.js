@@ -6,8 +6,9 @@ const WorkerList = ({ workers, updateWorker, deleteWorker }) => (
       <Worker
         key={w.id}
         {...w}
+        workers={workers}
         updateWorker={updateWorker}
-        deleteWorker={deleteWorker}
+        // deleteWorker={deleteWorker}
       />
     )}
   </>

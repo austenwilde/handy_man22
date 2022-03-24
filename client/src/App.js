@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import Home from './components/shared/Home';
-import Footer from "./components/shared/Footer";
+// import Footer from "./components/shared/Footer";
 import About from './components/shared/About';
 import Nomatch from './components/shared/Home';
 import MainNavbar from './components/shared/MainNavbar';
@@ -22,7 +22,14 @@ const App = () => (
       <Route path='/workers/:workerId/services' element={<Services />} />
       <Route path='/services/:serviceId/comments' element={<Comments />} />
     </Routes>
-    <Footer />
+
+
+    
+
+   
+   
+ 
+  
   </>
 
 )

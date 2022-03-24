@@ -9,13 +9,13 @@ const Workers = () => {
   const [workers, setWorkers] = useState([])
   const [adding, setAdd] = useState(false)
   useEffect( () => {
-    axios.get('/api/workers')
+    axios.get(`/api/workers`)
       .then( res => setWorkers(res.data) )
       .catch( err => console.log(err) )
   }, [])
 
   const addWorker = (worker) => {
-    axios.post('/api/workers', { worker })
+    axios.post(`/api/workers`, { worker })
       .then( res => setWorkers([ ...workers, res.data ]))
       .catch( err => console.log(err) )
   }
@@ -36,7 +36,7 @@ const Workers = () => {
 
   const deleteWorker = (id) => {
     axios.delete(`/api/workers/${id}`)
-      .then( res => setWorkers( workers.filter( w => w.id !== id ) ) )
+      .then( (res) => setWorkers( workers.filter( w => w.id !== id ) ) )
       .catch( err => console.log(err) )
   }
 
