@@ -8,7 +8,7 @@ const WorkerList = ({ workers, updateWorker, deleteWorker }) => (
         {...w}
         workers={workers}
         updateWorker={updateWorker}
-        // deleteWorker={deleteWorker}
+        deleteWorker={deleteWorker}
       />
     )}
   </>
