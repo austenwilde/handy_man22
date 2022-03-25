@@ -32,6 +32,7 @@ const Comment = ({ id, subject, body, user, updateComment, deleteComment }) => {
           <div><h3>{user}</h3></div>
           <div><h4>{subject}</h4></div>
           <div><h6>{body}</h6></div>
+          <div>
           <Button variant="warning"
             onClick={() => setEdit(true)}
           >
@@ -42,7 +43,7 @@ const Comment = ({ id, subject, body, user, updateComment, deleteComment }) => {
           >
             Delete
           </Button>
-
+          </div>
           </Stack>
           </CommentUnderline>
           </Form>

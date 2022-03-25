@@ -49,7 +49,7 @@ const Workers = () => {
               addWorker={addWorker}
               setAdd={setAdd} 
             />
-          <Button onClick={() => setAdd(false)}>Cancel</Button>
+          <Button variant="warning" onClick={() => setAdd(false)}>Cancel</Button>
           </>
         :
         <Button onClick={() => setAdd(true)}>+</Button>
